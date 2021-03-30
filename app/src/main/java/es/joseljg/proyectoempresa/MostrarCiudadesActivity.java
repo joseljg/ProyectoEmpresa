@@ -12,6 +12,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -48,10 +51,10 @@ public class MostrarCiudadesActivity extends AppCompatActivity {
         pagina_actual=0;
         num_columnas_landscape = 2;
        ciudades = CiudadController.obtenerCiudades(pagina_actual);
-        Log.i("sql", "pagina actual -> " + String.valueOf(pagina_actual));
-        Log.i("sql", "ciudades leidas -> " + String.valueOf(this.ciudades.size()));
         pagina_actual++;
         if(ciudades != null) {
+            Log.i("sql", "pagina actual -> " + String.valueOf(pagina_actual));
+            Log.i("sql", "ciudades leidas -> " + String.valueOf(this.ciudades.size()));
             mRecyclerView = findViewById(R.id.rv_ciudades);
             mAdapter = new ListaCiudadesAdapter(this, ciudades);
             mRecyclerView.setAdapter(mAdapter);
@@ -117,6 +120,37 @@ public class MostrarCiudadesActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    //---------------- menu----------------
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // return super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menuciudades, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //
+        switch (item.getItemId()) {
+            case R.id.menu_mostrarciudades:
+                Intent intent = new Intent(this, MostrarCiudadesActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menu_mostrarprovincias:
+                Intent intent2 = new Intent(this, MostrarProvinciasActivity.class);
+                startActivity(intent2);
+                return true;
+            case R.id.menu_irhome:
+                Intent intent3 = new Intent(this, MainActivity.class);
+                startActivity(intent3);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 
 }
