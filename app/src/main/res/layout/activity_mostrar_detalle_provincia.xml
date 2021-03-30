@@ -44,5 +44,16 @@
         app:layout_constraintStart_toStartOf="@+id/txt_detalle_nombrep"
         app:layout_constraintTop_toBottomOf="@+id/txt_detalle_nombrep" />
 
+    <ImageView
+        android:id="@+id/img_atras_detalle_provincia"
+        android:layout_width="@dimen/ancho1_boton"
+        android:layout_height="@dimen/alto1_boton"
+        android:layout_marginTop="@dimen/margen2"
+        android:onClick="atras_detalle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalle_idprovinciap"
+        app:srcCompat="@drawable/atras1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

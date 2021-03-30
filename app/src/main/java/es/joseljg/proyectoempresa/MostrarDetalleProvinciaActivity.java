@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,5 +37,9 @@ public class MostrarDetalleProvinciaActivity extends AppCompatActivity {
                 img_detalle_provincia.setImageBitmap(ImagenesBlobBitmap.bytes_to_bitmap(byteArray));
             }
         }
+    }
+
+    public void atras_detalle(View view) {
+        finish();
     }
 }

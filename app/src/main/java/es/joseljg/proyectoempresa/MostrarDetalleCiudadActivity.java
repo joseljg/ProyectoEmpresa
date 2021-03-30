@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,5 +40,9 @@ public class MostrarDetalleCiudadActivity extends AppCompatActivity {
                 img_detalle_ciudad.setImageBitmap(ImagenesBlobBitmap.bytes_to_bitmap(byteArray));
             }
         }
+    }
+
+    public void atras_detalle(View view) {
+    finish();
     }
 }
