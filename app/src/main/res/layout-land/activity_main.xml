@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/bt_mostrarCiudades"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen1"
+        android:layout_marginLeft="@dimen/margen1"
+        android:layout_marginEnd="@dimen/margen1"
+        android:layout_marginRight="@dimen/margen1"
+        android:onClick="mostrarCiudad"
+        android:text="@string/mostrar_ciudades"
+        android:textSize="@dimen/tam_letra1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_mostrarProvincias"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen2"
+        android:onClick="mostrarProvincias"
+        android:text="@string/mostrar_provincias"
+        android:textSize="@dimen/tam_letra1"
+        app:layout_constraintEnd_toEndOf="@+id/bt_mostrarCiudades"
+        app:layout_constraintStart_toStartOf="@+id/bt_mostrarCiudades"
+        app:layout_constraintTop_toBottomOf="@+id/bt_mostrarCiudades" />
+</androidx.constraintlayout.widget.ConstraintLayout>
